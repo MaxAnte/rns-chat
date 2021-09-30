@@ -1,0 +1,25 @@
+{
+  "name": "rns-chat",
+  "version": "1.0.0",
+  "description": "Chat (React+NodeJS+Socket.io)",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm run start --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^6.2.2",
+    "nanoid": "^3.1.28"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxAnte/rns-chat.git"
+  },
+  "author": "Max Zahorskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxAnte/rns-chat/issues"
+  },
+  "homepage": "https://github.com/MaxAnte/rns-chat#readme"
+}
