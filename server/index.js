@@ -1,5 +1,10 @@
-const server = require("http").createServer();
-const io = require("socket.io")(server, {
+import { createServer } from "http";
+import { Server } from "socket.io";
+import registerMessageHandlers from "./handlers/messageHandlers.js";
+import registerUserHandlers from "./handlers/userHandlers.js";
+
+const server = createServer();
+const io = new Server(server, {
   cors: {
     origin: "*",
   },
@@ -7,8 +12,8 @@ const io = require("socket.io")(server, {
 
 const log = console.log;
 
-const registerMessageHandlers = require("./handlers/messageHandlers");
-const registerUserHandlers = require("./handlers/userHandlers");
+// const registerMessageHandlers = require("./handlers/messageHandlers");
+// const registerUserHandlers = require("./handlers/userHandlers");
 
 const onConnection = (socket) => {
   log("User connected");

@@ -1,10 +1,12 @@
-const { nanoid } = require("nanoid");
-const low = require("lowdb");
-const FileSync = require("lowdb/adapters/FileSync");
-const adapter = new FileSync("db/messages.json");
-const db = low(adapter);
+import { nanoid } from "nanoid";
+import { Low, JSONFile } from "lowdb";
 
-db.defaults({
+const adapter = new JSONFile("db/messages.json");
+const db = new Low(adapter);
+
+await db.read();
+
+db.data = {
   messages: [
     {
       messageId: "1",
@@ -21,9 +23,11 @@ db.defaults({
       createdAt: "2021-10-02",
     },
   ],
-}).write();
+};
 
-module.exports = (io, socket) => {
+await db.write();
+
+export default (io, socket) => {
   const getMessages = () => {
     const messages = db.get("messages").value();
     io.in(socket.roomId).emit("messages", messages);

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Chat (React+NodeJS+Socket.io)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "server": "npm run dev --prefix server",
     "client": "npm run start --prefix client",

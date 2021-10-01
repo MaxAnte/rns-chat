@@ -3,7 +3,7 @@ const users = {
   2: { username: "Lebron", online: false },
 };
 
-module.exports = (io, socket) => {
+export default (io, socket) => {
   const getUsers = () => {
     io.in(socket.roomId).emit("users", users);
   };

@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "messageId": "1",
+      "userId": "1",
+      "senderName": "Max",
+      "messageText": "Wassup, man?",
+      "createdAt": "2021-10-01"
+    },
+    {
+      "messageId": "2",
+      "userId": "2",
+      "senderName": "Lebron",
+      "messageText": "Good, fam! You?",
+      "createdAt": "2021-10-02"
+    }
+  ]
+}
