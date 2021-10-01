@@ -1,7 +1,7 @@
-const users = {
-  1: { username: "Max", online: false },
-  2: { username: "Lebron", online: false },
-};
+const users = [
+  { username: "Max", online: false },
+  { username: "Lebron", online: false },
+];
 
 export default (io, socket) => {
   const getUsers = () => {
