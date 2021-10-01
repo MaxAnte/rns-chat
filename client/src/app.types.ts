@@ -4,6 +4,7 @@ export type Message = {
   senderName: string;
   messageText: string;
   createdAt: string;
+  currentUser?: boolean;
 };
 
 export type User = { username: string; online: boolean };
